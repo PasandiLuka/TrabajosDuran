@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Biblitoteca.Entidades
+namespace Biblitoteca.Entidades;
+
+public class Soldado
 {
-    public class Soldado
-    {
-        
-    }
+    public string nombre = "";
+    public int vidasCobradas;
+    
 }
