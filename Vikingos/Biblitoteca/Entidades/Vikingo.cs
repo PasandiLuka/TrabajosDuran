@@ -1,4 +1,5 @@
-﻿namespace Biblitoteca;
+﻿using Biblitoteca.Enum;
+namespace Biblitoteca.Entidades;
 
 public abstract class Vikingo : Productividad
 {
