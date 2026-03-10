@@ -2,7 +2,7 @@
 using Biblitoteca.Interfaces;
 namespace Biblitoteca.Entidades.Abstract;
 
-public abstract class Vikingo : Productividad
+public abstract class Vikingo : IProductividad
 {
     public bool productivo;
     public Casta casta;

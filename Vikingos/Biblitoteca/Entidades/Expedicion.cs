@@ -1,7 +1,24 @@
 using Biblitoteca.Entidades.Abstract;
+
 namespace Biblitoteca.Entidades;
 public class Expedicion
 {
-    public List<Vikingo> vikingos { get; set; }
-    public Lugar lugar { get; set; }
+    public List<Vikingo> vikingos;
+    public Expedicion(List<Vikingo> vikingos)
+    {
+        foreach (var vikingo in vikingos)
+        {
+            vikingo.ChequearProductividad();
+        }
+        this.vikingos = vikingos;
+        
+    }
+    public void RealizarExpedicion(Lugar lugar)
+    {
+        foreach (var vikingo in vikingos)
+        {
+            
+        }
+        
+    }
 }

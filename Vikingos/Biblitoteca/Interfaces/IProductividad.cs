@@ -1,6 +1,6 @@
 namespace Biblitoteca.Interfaces;
 
-public interface Productividad
+public interface IProductividad
 {
     public void ChequearProductividad();
 }

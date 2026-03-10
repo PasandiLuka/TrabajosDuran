@@ -17,7 +17,8 @@ public class Soldado : Vikingo
     }
     public override void ChequearProductividad()
     {
-        throw new NotImplementedException();
+        if(casta == Casta.Jarl && arma > 0) throw new ArgumentException("El soldado no es productivo, tiene un arma y es un Jarl");
+
     }
 
     public override void SubirCasta()
