@@ -7,7 +7,7 @@ namespace Biblitoteca.Entidades;
 
 public class Soldado
 {
-    public string nombre { get; set; }
+    public string arma { get; set; }
     public int vidasCobradas { get; set; }
     
 }
