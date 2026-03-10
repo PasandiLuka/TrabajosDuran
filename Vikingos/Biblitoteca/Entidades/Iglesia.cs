@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 namespace Biblitoteca.Entidades;
 
-public class Granjero
+public class Iglesia
 {
-    public float hectareas;
-    public int cantHijos;
+    public int crucifijos;
 }
