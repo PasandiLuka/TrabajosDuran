@@ -7,5 +7,5 @@ namespace Biblitoteca.Entidades;
 
 public class Iglesia
 {
-    public int crucifijos;
+    public int crucifijos { get; set; }
 }
