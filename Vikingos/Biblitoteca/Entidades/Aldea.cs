@@ -2,6 +2,6 @@ namespace Biblitoteca.Entidades;
 
 public class Aldea
 {
-    Iglesia iglesia;
-    Amurallada amurallada;
+    public Iglesia iglesia;
+    public Amurallada amurallada;
 }
