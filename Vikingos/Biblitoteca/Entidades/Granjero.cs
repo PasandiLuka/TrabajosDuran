@@ -12,6 +12,10 @@ public class Granjero : Vikingo
 {
     public float hectareas { get; set; }
     public int cantHijos { get; set; } 
+    public Granjero(Casta casta, bool productivo)   : base (casta, productivo)
+    {
+        
+    }
     public override void SubirCasta()
     {
         switch (casta)
@@ -29,11 +33,8 @@ public class Granjero : Vikingo
 
     public override void ChequearProductividad()
     {
-        throw new NotImplementedException();
+        if(hectareas >= cantHijos * 2) productivo = true;
+        else throw new ArgumentException("El granjero no es productivo, no tiene suficientes hectareas por hijo");
     }
 
-    public Granjero(Casta casta, bool productivo)   : base (casta, productivo)
-    {
-        
-    }
 }

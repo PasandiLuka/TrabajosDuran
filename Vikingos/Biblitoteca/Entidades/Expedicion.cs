@@ -15,10 +15,6 @@ public class Expedicion
     }
     public void RealizarExpedicion(Lugar lugar)
     {
-        foreach (var vikingo in vikingos)
-        {
-            
-        }
-        
+        if(lugar.capital.botin * 3 < vikingos.Count) 
     }
 }
