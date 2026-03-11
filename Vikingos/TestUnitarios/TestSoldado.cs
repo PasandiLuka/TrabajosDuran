@@ -63,4 +63,17 @@ public class UnitTest1
 
         Assert.Equal(Casta.Thrall, soldado.casta);
     }
+
+    [Fact]
+    public void CuandoSuboDeCastaEstandoEnThrall_DebeArrojarUnaExcepcion()
+    {
+        int arma = 666;
+
+        Soldado soldado = new Soldado(arma);
+
+        soldado.SubirCasta();
+        soldado.SubirCasta();
+
+        Assert.Throws<InvalidOperationException>(() => soldado.SubirCasta());
+    }
 }
