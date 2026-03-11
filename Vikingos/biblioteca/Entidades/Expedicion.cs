@@ -15,6 +15,8 @@ public class Expedicion
     }
     public void RealizarExpedicion(Lugar lugar)
     {
-        if(lugar.capital.botin * 3 < vikingos.Count) 
+        if(lugar.capital.cantDefensores > vikingos.Count) throw new ArgumentException("La expedición no es rentable, hay más defensores que vikingos");
+        if(lugar.capital.BotinTotal() * 3 < vikingos.Count) throw new ArgumentException("La expedición no es rentable");
+
     }
 }
