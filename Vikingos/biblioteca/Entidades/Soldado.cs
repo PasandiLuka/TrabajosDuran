@@ -8,7 +8,7 @@ public class Soldado : Vikingo
     public int arma { get; private set; }
     public int vidasCobradas { get; private set; }
 
-    public Soldado(int arma, Casta casta, bool productivo) : base(casta, productivo)
+    public Soldado(int arma, Casta casta = default, bool productivo = default) : base(casta, productivo)
     {
         Validador.EnteroPositivo(arma, "arma");
         this.arma = arma;
@@ -35,6 +35,11 @@ public class Soldado : Vikingo
         }
     }
 
+    public void IncrementarVidasCobradas(Soldado s)
+    {
+        s.vidasCobradas += 1;
+    }
+
     //SETTERS
     public void SetArmas(int _arma)
     {
@@ -45,4 +50,5 @@ public class Soldado : Vikingo
     {
         Validador.EnteroPositivo(_vidasCobradas, "vidasCobradas");
     }
+
 }

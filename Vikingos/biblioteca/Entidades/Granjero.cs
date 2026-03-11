@@ -7,7 +7,7 @@ public class Granjero : Vikingo
 {
     public float hectareas { get; private set; }
     public int cantHijos { get; private set; } 
-    public Granjero(float hectareas, int cantHijos, Casta casta, bool productivo) : base (casta, productivo)
+    public Granjero(float hectareas, int cantHijos, Casta casta = default, bool productivo = default) : base (casta, productivo)
     {
         Validador.FloatPositivo(hectareas, "El parametro'hectareas' debe ser positivo.");
         Validador.EnteroPositivo(cantHijos, " El parametro 'cantHijos' debe ser positivo.");
