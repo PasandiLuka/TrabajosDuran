@@ -7,5 +7,10 @@ namespace Biblitoteca.Entidades;
 
 public class Iglesia
 {
-    public int crucifijos { get; set; }
+    public float crucifijos { get; set; }
+
+    public double botinCrucifijos()
+    {
+        return crucifijos * 1.5;
+    }
 }
