@@ -9,11 +9,14 @@ namespace Biblitoteca.Entidades;
 
 public class Soldado : Vikingo
 {
-    public int arma { get; set; }
-    public int vidasCobradas { get; set; }
+    public int arma { get; private set; }
+    public int vidasCobradas { get; private set; }
 
-    public Soldado(Casta casta, bool productivo) : base(casta, productivo)
+    public Soldado(int arma, Casta casta, bool productivo) : base(casta, productivo)
     {
+        Validador.EnteroPositivo(arma, "arma");
+        this.arma = arma;
+        this.vidasCobradas = 0;
     }
     public override void ChequearProductividad()
     {
@@ -34,5 +37,16 @@ public class Soldado : Vikingo
                 arma += 10;
                 } break;
         }
+    }
+
+    //SETTERS
+    public void SetArmas(int _arma)
+    {
+        Validador.EnteroPositivo(_arma, "arma");
+        arma = _arma;
+    }
+    public void SetVidasCobradas(int _vidasCobradas)
+    {
+        Validador.EnteroPositivo(_vidasCobradas, "vidasCobradas");
     }
 }
