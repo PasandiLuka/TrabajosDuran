@@ -49,6 +49,7 @@ public class Soldado : Vikingo
     public void SetVidasCobradas(int _vidasCobradas)
     {
         Validador.EnteroPositivo(_vidasCobradas, "vidasCobradas");
+        vidasCobradas = _vidasCobradas;
     }
 
 }
