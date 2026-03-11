@@ -1,8 +1,7 @@
-namespace Biblitoteca.Entidades
+namespace Biblitoteca.Entidades;
+
+public class Lugar
 {
-    public class Lugar
-    {
-        public Capital capital { get; set; }
-        public Aldea aldea { get; set; }
-    }
+    public Capital capital { get; set; }
+    public Aldea aldea { get; set; }
 }

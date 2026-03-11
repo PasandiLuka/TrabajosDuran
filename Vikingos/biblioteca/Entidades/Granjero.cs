@@ -1,6 +1,5 @@
 using Biblitoteca.Entidades.Abstract;
 using Biblitoteca.Enum;
-using Biblitoteca;
 
 namespace Biblitoteca.Entidades;
 

@@ -2,8 +2,8 @@ namespace Biblitoteca.Entidades;
 
 public class Aldea
 {
-    public Iglesia? iglesia;
-    public Amurallada? amurallada;
+    public Iglesia? iglesia { get; private set; }
+    public Amurallada? amurallada { get; private set; }
     
     /// <summary>
     /// Es solicitado definir si la aldea es amurallada o si posee una iglesia, mas no puede poseer ambas
