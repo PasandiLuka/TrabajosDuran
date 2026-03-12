@@ -12,7 +12,7 @@ public class Soldado : Vikingo
     {
         Validador.EnteroPositivo(arma, "arma");
         this.arma = arma;
-        this.vidasCobradas = 0;
+        vidasCobradas = 0;
     }
     public override void ChequearProductividad()
     {

@@ -6,6 +6,15 @@ public class Capital
     public float botin { get; private set; }
     public float riquezaTierra { get; private set; }
 
+    public Capital(int cantDefensores, float riquezaTierra)
+    {
+        Validador.EnteroPositivo(cantDefensores, "cantDefensores");
+        Validador.FloatPositivo(botin,"botin");
+        Validador.FloatPositivo(riquezaTierra,"riquezaTierra");
+        this.cantDefensores = cantDefensores;
+        this.riquezaTierra = riquezaTierra;
+        botin = 0;
+    }
 
     // metodo botin para saber el total del botin de la capital.
     public float BotinTotal()

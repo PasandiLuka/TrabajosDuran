@@ -3,12 +3,15 @@ namespace Biblitoteca.Entidades;
 public class Iglesia
 {
     public float crucifijos { get; private set; }
-
-    public double botinCrucifijos()
+    public Iglesia(float crucifijos)
     {
-        return crucifijos * 1.5;
+        Validador.FloatPositivo(crucifijos, "crucifijos");
+        this.crucifijos = crucifijos;
     }
-
+    public float botinCrucifijos()
+    {
+        return crucifijos * 1.5f;
+    }
     //SETTERS
     public void SetCrucifijos(float _crucifijos)
     {
