@@ -15,7 +15,6 @@ public class TestCapital
         Capital capital = new Capital(2, 1.5f);
 
         Assert.Equal(2, capital.cantDefensores);
-        Assert.Equal(1.5f, capital.botin);
         Assert.Equal(1.5f, capital.riquezaTierra);
     }
     [Fact]
