@@ -10,7 +10,7 @@ public class Iglesia
     }
     public float botinCrucifijos()
     {
-        return crucifijos * 1.5f;
+        return crucifijos * 2.5f;
     }
     //SETTERS
     public void SetCrucifijos(float _crucifijos)

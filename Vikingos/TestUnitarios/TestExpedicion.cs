@@ -14,9 +14,10 @@ public class TestExpedicion
     [Fact]
     public void CuandoCreoUnaExpedicion_DebeCrearseCorrectamenteConUnChequeoDeProductividad()
     {
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
         
         soldado.SetVidasCobradas(20);
+        soldado.SubirCasta();
         List<Vikingo> vikingos = new List<Vikingo>
         {
             soldado,
@@ -24,14 +25,15 @@ public class TestExpedicion
         };
         
         Expedicion expedicion = new Expedicion(vikingos);
-        
+        System.Console.WriteLine(soldado.casta.ToString());
 
         Assert.Equal(vikingos.Count, expedicion.vikingos.Count);
     }
     [Fact]
     public void CuandoCreoUnaExpedicionConUnVikingoNoProductivo_NoDebeContarlo()
     {
-        Soldado soldadoNoProductivo = new Soldado(5, Casta.Karl);
+        Soldado soldadoNoProductivo = new Soldado(5);
+        soldadoNoProductivo.SubirCasta();
         List<Vikingo> vikingos = new List<Vikingo>
         {
             soldadoNoProductivo,
@@ -44,7 +46,8 @@ public class TestExpedicion
     [Fact]
     public void CuandoLeAgregoUnNuevoVikingo_SeDebeAgregarCorrectamente()
     {
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -52,8 +55,9 @@ public class TestExpedicion
             new Granjero(10,4)
         };
         
-        Soldado soldado2 = new Soldado(5, Casta.Karl);
-        soldado.SetVidasCobradas(20);
+        Soldado soldado2 = new Soldado(5);
+        soldado2.SubirCasta();
+        soldado2.SetVidasCobradas(20);
 
         Expedicion expedicion = new Expedicion(vikingos);
         expedicion.SetNewVikingo(soldado2);
@@ -63,7 +67,9 @@ public class TestExpedicion
     [Fact]
     public void CuandoLeAgregoUnaNuevaListaDeVikingos_DebeReemplazarALaAnteriorCorrectamente()
     {
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -84,7 +90,7 @@ public class TestExpedicion
         Assert.Equal(vikingos1, expedicion.vikingos);
     }
     [Fact]
-    public void CuandoRealizoUnaExpedicionConAmbasLocaciones_DebeDevolverElNumero3()
+    public void CuandoRealizoUnaExpedicionConAmbasLocaciones_DebeDevolverElNumero5()
     {
         int cantDefensores = 2;
         float riquezaTierra = 1.2f;
@@ -95,7 +101,8 @@ public class TestExpedicion
 
         Lugar lugar = new Lugar(capital, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -104,7 +111,7 @@ public class TestExpedicion
         };
         Expedicion expedicion = new Expedicion(vikingos);
         
-        Assert.Equal(1, expedicion.RealizarExpedicion(lugar));
+        Assert.Equal(5, expedicion.RealizarExpedicion(lugar));
     }
     [Fact]
     public void CuandoRealizoUnaExpedicionSinLosVikingosNecesarios_DebeDevolverLaExcepcion()
@@ -118,7 +125,8 @@ public class TestExpedicion
 
         Lugar lugar = new Lugar(capital, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -137,7 +145,8 @@ public class TestExpedicion
 
         Lugar lugar = new Lugar(capital, null);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -156,7 +165,8 @@ public class TestExpedicion
 
         Lugar lugar = new Lugar(null, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -171,11 +181,12 @@ public class TestExpedicion
     public void CuandoRealizoUnaExpedicionQueLaAldeaAmuralladaNoEsRentable_DebeDevolverLaExcepcion()
     {
 
-        Amurallada amurallada = new Amurallada(2);
+        Amurallada amurallada = new Amurallada(4);
         Aldea aldea = new Aldea(null, amurallada);
         Lugar lugar = new Lugar(null, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -187,18 +198,18 @@ public class TestExpedicion
         Assert.Throws<ArgumentException>(() => expedicion.RealizarExpedicion(lugar));
     }
     [Fact]
-    public void CuandoRealizoUnaExpedicionQueSuCapitalEsRentablePeroLaAldeaNo_DebeDevolverElNumero1()
+    public void CuandoRealizoUnaExpedicionQueSuCapitalEsRentablePeroLaAldeaNo_DebeDevolverElNumero4()
     {
-        int cantDefensores = 3;
-        float riquezaTierra = 1.2f;
+        int cantDefensores = 2;
+        float riquezaTierra = 2f;
         Capital capital = new Capital(cantDefensores, riquezaTierra);
 
-        Iglesia iglesia = new Iglesia(1);
-        Aldea aldea = new Aldea(iglesia);
-
+        Iglesia iglesia = new Iglesia(2);
+        Aldea aldea = new Aldea(iglesia, null);
         Lugar lugar = new Lugar(capital, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -208,10 +219,10 @@ public class TestExpedicion
         Expedicion expedicion = new Expedicion(vikingos);
         int valor = expedicion.RealizarExpedicion(lugar);
 
-        Assert.Equal(1, valor);
+        Assert.Equal(4, valor);
     }
     [Fact]
-    public void CuandoRealizoUnaExpedicionQueLaAldeaEsRentablePeroLaCapitalNo_DebeDevolverElNumero2()
+    public void CuandoRealizoUnaExpedicionQueLaAldeaEsRentablePeroLaCapitalNo_DebeDevolverElNumero3()
     {
         int cantDefensores = 1;
         float riquezaTierra = 1/3;
@@ -222,7 +233,8 @@ public class TestExpedicion
 
         Lugar lugar = new Lugar(capital, aldea);
 
-        Soldado soldado = new Soldado(5, Casta.Karl);
+        Soldado soldado = new Soldado(5);
+        soldado.SubirCasta();
         soldado.SetVidasCobradas(20);
         List<Vikingo> vikingos = new List<Vikingo>
         {
@@ -233,7 +245,6 @@ public class TestExpedicion
 
         int valor = expedicion.RealizarExpedicion(lugar);
         
-        Assert.Equal(2, valor);
+        Assert.Equal(3, valor);
     }
-
 }

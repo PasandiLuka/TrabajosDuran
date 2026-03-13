@@ -46,19 +46,18 @@ public class Expedicion
         }
         else
         {
-            if(lugar.capital.cantDefensores > vikingos.Count) throw new ArgumentException("La expedición no es rentable, hay más defensores que vikingos");
-            if(lugar.capital.BotinTotal() * 3 < vikingos.Count) throw new ArgumentException("La expedición no es rentable");
+            if(lugar.capital.cantDefensores > vikingos.Count) return 3;
+            if(lugar.capital.BotinTotal() * 3 < vikingos.Count) return 3;
 
             if (lugar.aldea.iglesia is not null)
             {
-                if(lugar.aldea.iglesia.botinCrucifijos() < 15) throw new ArgumentException("La expedición no es rentable, el botín de crucifijos es insuficiente");
-                Console.WriteLine();
+                if(lugar.aldea.iglesia.botinCrucifijos() < 15) return 4;
             }
             if (lugar.aldea.amurallada is not null)
             {
-                if(lugar.aldea.amurallada.minimoVikingos > vikingos.Count) throw new ArgumentException("La expedición no es rentable, no hay suficientes vikingos para saquear la aldea amurallada");
+                if(lugar.aldea.amurallada.minimoVikingos > vikingos.Count) return 4;
             }
-            return 3;
+            return 5;
         }
     }
 
