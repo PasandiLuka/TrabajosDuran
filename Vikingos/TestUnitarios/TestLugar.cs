@@ -31,6 +31,6 @@ public class TestLugar
     [Fact]
     public void CuandoCreoUnLugarConValoresNulos_DebeLanzarUnaExcepcion()
     {
-        Assert.Throws<ArgumentException>(() => new Lugar(null, null));
+        Assert.Throws<InvalidOperationException>(() => new Lugar(null, null));
     }
 }

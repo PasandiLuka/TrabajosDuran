@@ -26,9 +26,8 @@ public class TestGranjero
         int cantHijos = 2;
 
         Granjero granjero = new Granjero(hectareas, cantHijos);
-        granjero.ChequearProductividad();
-        Assert.False(granjero.productivo);
-
+        Assert.Throws<ArgumentException>(() => granjero.ChequearProductividad());
+        
         float hectareas1 = 4;
         int cantHijos1 = 2;
 
