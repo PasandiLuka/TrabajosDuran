@@ -26,7 +26,7 @@ public class TestIglesia
     [Fact]
     public void CuandoLeAsignoUnNuevoValorASusAtributos_DebeCambiarseCorrectamente()
     {
-        int nuevoValor = 12;
+        int nuevoValor = 10;
 
         Iglesia iglesia = new Iglesia(12);
         iglesia.SetCrucifijos(nuevoValor);
