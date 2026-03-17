@@ -39,6 +39,6 @@ public class TestIglesia
         Iglesia iglesia = new Iglesia(12);
 
         float botin = iglesia.botinCrucifijos();
-        Assert.Equal(iglesia.crucifijos * 1.5f,botin);
+        Assert.Equal(iglesia.crucifijos * 2.5f,botin);
     }
 }

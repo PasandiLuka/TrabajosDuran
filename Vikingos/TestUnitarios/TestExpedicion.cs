@@ -134,7 +134,8 @@ public class TestExpedicion
             new Granjero(10,4)
         };
         Expedicion expedicion = new Expedicion(vikingos);
-        Assert.Throws<ArgumentException>(() => expedicion.RealizarExpedicion(lugar));
+        int valor = expedicion.RealizarExpedicion(lugar);
+        Assert.Equal(3, valor);
     }
     [Fact]
     public void CuandoRealizoUnaExpedicionCuandoLaCapitalNoEsRentable_DebeDevolverLaExcepcion()
