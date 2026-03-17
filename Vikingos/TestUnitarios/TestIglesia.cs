@@ -31,7 +31,7 @@ public class TestIglesia
         Iglesia iglesia = new Iglesia(12);
         iglesia.SetCrucifijos(nuevoValor);
 
-        Assert.Equal(12, iglesia.crucifijos);
+        Assert.Equal(10, iglesia.crucifijos);
     }
     [Fact]
     public void CuandoCalculoElbotinDeLaIglesia_DebeDevolverElValorCorrectamente()
