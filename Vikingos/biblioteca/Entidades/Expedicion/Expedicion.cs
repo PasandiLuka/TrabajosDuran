@@ -1,23 +1,12 @@
-using Biblitoteca.Entidades.Abstract;
+using Biblitoteca.Entidades.Abstract.VikingosAbstract;
+using Biblitoteca.Entidades.Lugares;
 
-namespace Biblitoteca.Entidades;
+namespace Biblitoteca.Entidades.Expedicion;
 
-/// <summary>
-/// Representa una expedición vikinga compuesta por un grupo de vikingos.
-/// Solo los vikingos productivos pueden formar parte de la expedición.
-/// </summary>
 public class Expedicion
 {
-    /// <summary>
-    /// Obtiene la lista de vikingos que forman parte de la expedición.
-    /// </summary>
     public List<Vikingo> Vikingos { get; private set; }
 
-    /// <summary>
-    /// Inicializa una nueva instancia de la clase <see cref="Expedicion"/>.
-    /// Solo se agregan los vikingos que son productivos.
-    /// </summary>
-    /// <param name="vikingos">La lista de vikingos para la expedición.</param>
     public Expedicion(List<Vikingo> vikingos)
     {
         Vikingos = new List<Vikingo>();
@@ -39,19 +28,6 @@ public class Expedicion
         }
     }
 
-    /// <summary>
-    /// Realiza una expedición a un lugar específico.
-    /// </summary>
-    /// <param name="lugar">El lugar a expedicionar.</param>
-    /// <returns>
-    /// Código de resultado:
-    /// 1 - Expedición a capital exitosa
-    /// 2 - Expedición a aldea exitosa
-    /// 3 - Expedición a capital fallida (no rentable)
-    /// 4 - Expedición a aldea fallida (no rentable)
-    /// 5 - Expedición mixta parcialmente exitosa
-    /// </returns>
-    /// <exception cref="ArgumentException">Se lanza cuando la expedición no es rentable.</exception>
     public int RealizarExpedicion(Lugar lugar)
     {
         // Caso: Solo capital
@@ -131,22 +107,12 @@ public class Expedicion
         return 5;
     }
 
-    /// <summary>
-    /// Agrega un nuevo vikingo a la expedición.
-    /// </summary>
-    /// <param name="vikingo">El vikingo a agregar.</param>
-    /// <exception cref="ArgumentException">Se lanza cuando el vikingo no es productivo.</exception>
     public void AgregarVikingo(Vikingo vikingo)
     {
         vikingo.ChequearProductividad();
         Vikingos.Add(vikingo);
     }
 
-    /// <summary>
-    /// Reemplaza la lista de vikingos de la expedición.
-    /// </summary>
-    /// <param name="vikingos">La nueva lista de vikingos.</param>
-    /// <exception cref="ArgumentException">Se lanza cuando algún vikingo no es productivo.</exception>
     public void SetVikingos(List<Vikingo> vikingos)
     {
         foreach (var vikingo in vikingos)

@@ -1,6 +1,8 @@
-using Biblitoteca.Entidades;
-using Biblitoteca.Entidades.Abstract;
+using Biblitoteca.Entidades.Expedicion;
+using Biblitoteca.Entidades.Abstract.VikingosAbstract;
 using Biblitoteca.Entidades.Abstract.Casta;
+using Biblitoteca.Entidades.Lugares;
+using Biblitoteca.Entidades.VikingosTipo;
 using Xunit;
 
 namespace TestUnitarios;

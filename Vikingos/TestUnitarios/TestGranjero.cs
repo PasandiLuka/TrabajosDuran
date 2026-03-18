@@ -1,4 +1,4 @@
-using Biblitoteca.Entidades;
+using Biblitoteca.Entidades.VikingosTipo;
 using Biblitoteca.Entidades.Abstract.Casta;
 using Xunit;
 

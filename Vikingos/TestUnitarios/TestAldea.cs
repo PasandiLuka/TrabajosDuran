@@ -1,4 +1,4 @@
-using Biblitoteca.Entidades;
+using Biblitoteca.Entidades.Lugares;
 using Xunit;
 
 namespace TestUnitarios;
