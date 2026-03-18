@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblitoteca.Entidades;
 using Xunit;
 
@@ -17,10 +13,11 @@ public class TestAldea
 
         Aldea aldea = new Aldea(iglesia);
         Aldea aldea1 = new Aldea(null, amurallada);
-        
-        Assert.Equal(12, aldea.iglesia.crucifijos);
-        Assert.Equal(10, aldea1.amurallada.minimoVikingos);
+
+        Assert.Equal(12, aldea.Iglesia.Crucifijos);
+        Assert.Equal(10, aldea1.Amurallada.MinimoVikingos);
     }
+
     [Fact]
     public void CuandoCreaUnaAldeaConDosLocaciones_DebeDevolverLaExcepcion()
     {
@@ -29,8 +26,9 @@ public class TestAldea
 
         Assert.Throws<InvalidOperationException>(() => new Aldea(iglesia, amurallada));
     }
+
     [Fact]
-    public void CuandoCreoUnaAldeaSinNingunaLocacion_DebeDevlverLaExcepcion()
+    public void CuandoCreoUnaAldeaSinNingunaLocacion_DebeDevolverLaExcepcion()
     {
         Assert.Throws<InvalidOperationException>(() => new Aldea(null, null));
         Assert.Throws<InvalidOperationException>(() => new Aldea());

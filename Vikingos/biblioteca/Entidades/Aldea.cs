@@ -1,19 +1,41 @@
 namespace Biblitoteca.Entidades;
 
+/// <summary>
+/// Representa una aldea que puede tener una iglesia o ser amurallada, pero no ambas.
+/// </summary>
 public class Aldea
 {
-    public Iglesia? iglesia { get; private set; }
-    public Amurallada? amurallada { get; private set; }
-    
     /// <summary>
-    /// Es solicitado definir si la aldea es amurallada o si posee una iglesia, mas no puede poseer ambas
+    /// Obtiene la iglesia de la aldea, si existe.
     /// </summary>
-    /// <param name="iglesia"></param>
-    /// <param name="amurallada"></param>
+    public Iglesia? Iglesia { get; private set; }
+
+    /// <summary>
+    /// Obtiene la información de amurallado de la aldea, si existe.
+    /// </summary>
+    public Amurallada? Amurallada { get; private set; }
+
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="Aldea"/>.
+    /// La aldea debe tener una iglesia o ser amurallada, pero no ambas.
+    /// </summary>
+    /// <param name="iglesia">La iglesia de la aldea. Puede ser null.</param>
+    /// <param name="amurallada">La información de amurallado. Puede ser null.</param>
+    /// <exception cref="InvalidOperationException">
+    /// Se lanza cuando la aldea no tiene iglesia ni es amurallada, o tiene ambas.
+    /// </exception>
     public Aldea(Iglesia? iglesia = null, Amurallada? amurallada = null)
     {
-        if ((iglesia is null && amurallada is null) || (iglesia is not null && amurallada is not null)) throw new InvalidOperationException("La aldea debe ser amurallada o poseer una iglesia, más no debe poseer las dos");
-        this.iglesia = iglesia;
-        this.amurallada = amurallada;
+        bool tieneIglesia = iglesia is not null;
+        bool tieneAmurallada = amurallada is not null;
+
+        if (tieneIglesia == tieneAmurallada)
+        {
+            throw new InvalidOperationException(
+                "La aldea debe tener una iglesia o ser amurallada, pero no ambas.");
+        }
+
+        Iglesia = iglesia;
+        Amurallada = amurallada;
     }
 }

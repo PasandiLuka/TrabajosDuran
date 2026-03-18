@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblitoteca.Entidades;
 using Xunit;
 
@@ -14,8 +10,9 @@ public class TestIglesia
     {
         Iglesia iglesia = new Iglesia(12);
 
-        Assert.Equal(12, iglesia.crucifijos);
+        Assert.Equal(12, iglesia.Crucifijos);
     }
+
     [Fact]
     public void CuandoCreoUnaIglesiaConValoresNegativos_DebeDevolverUnaExcepcion()
     {
@@ -23,6 +20,7 @@ public class TestIglesia
 
         Assert.Throws<ArgumentException>(() => new Iglesia(crucifijosNegativos));
     }
+
     [Fact]
     public void CuandoLeAsignoUnNuevoValorASusAtributos_DebeCambiarseCorrectamente()
     {
@@ -31,14 +29,15 @@ public class TestIglesia
         Iglesia iglesia = new Iglesia(12);
         iglesia.SetCrucifijos(nuevoValor);
 
-        Assert.Equal(10, iglesia.crucifijos);
+        Assert.Equal(10, iglesia.Crucifijos);
     }
+
     [Fact]
-    public void CuandoCalculoElbotinDeLaIglesia_DebeDevolverElValorCorrectamente()
+    public void CuandoCalculoElBotinDeLaIglesia_DebeDevolverElValorCorrectamente()
     {
         Iglesia iglesia = new Iglesia(12);
 
-        float botin = iglesia.botinCrucifijos();
-        Assert.Equal(iglesia.crucifijos * 2.5f,botin);
+        float botin = iglesia.BotinCrucifijos();
+        Assert.Equal(iglesia.Crucifijos * 2.5f, botin);
     }
 }

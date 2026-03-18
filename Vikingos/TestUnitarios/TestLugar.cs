@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblitoteca.Entidades;
 using Xunit;
 
@@ -21,13 +17,14 @@ public class TestLugar
 
         Lugar lugar = new Lugar(capital, aldea);
 
-        Assert.Equal(aldea, lugar.aldea);
-        Assert.Equal(aldea.iglesia, lugar.aldea.iglesia);
-        Assert.Equal(aldea.iglesia.crucifijos, lugar.aldea.iglesia.crucifijos);
-        Assert.Equal(capital, lugar.capital);
-        Assert.Equal(capital.cantDefensores, lugar.capital.cantDefensores);
-        Assert.Equal(capital.riquezaTierra, lugar.capital.riquezaTierra);
+        Assert.Equal(aldea, lugar.Aldea);
+        Assert.Equal(aldea.Iglesia, lugar.Aldea.Iglesia);
+        Assert.Equal(aldea.Iglesia.Crucifijos, lugar.Aldea.Iglesia.Crucifijos);
+        Assert.Equal(capital, lugar.Capital);
+        Assert.Equal(capital.CantDefensores, lugar.Capital.CantDefensores);
+        Assert.Equal(capital.RiquezaTierra, lugar.Capital.RiquezaTierra);
     }
+
     [Fact]
     public void CuandoCreoUnLugarConValoresNulos_DebeLanzarUnaExcepcion()
     {

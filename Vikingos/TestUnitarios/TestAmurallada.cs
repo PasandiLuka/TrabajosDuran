@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Biblitoteca.Entidades;
 using Xunit;
 
@@ -13,9 +9,10 @@ public class TestAmurallada
     public void CuandoCreoElObjetoAmurallada_DebeCrearseConSusValoresCorrectamente()
     {
         Amurallada amurallada = new Amurallada(12);
-        
-        Assert.Equal(12, amurallada.minimoVikingos);
+
+        Assert.Equal(12, amurallada.MinimoVikingos);
     }
+
     [Fact]
     public void CuandoCreoElObjetoAmuralladaConUnValorNegativo_DebeDevolverUnaExcepcion()
     {

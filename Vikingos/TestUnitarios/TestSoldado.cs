@@ -1,8 +1,10 @@
 ﻿using Biblitoteca.Entidades;
-using Biblitoteca.Enum;
+using Biblitoteca.Entidades.Abstract.Casta;
+using Xunit;
+
 namespace TestUnitarios;
 
-public class UnitTest1
+public class TestSoldado
 {
     [Fact]
     public void CuandoCreoUnSoldado_DebeCrearElSoldadoConLosDatosCorrectos()
@@ -10,11 +12,11 @@ public class UnitTest1
         int arma = 15;
 
         Soldado soldado = new Soldado(arma);
-        
-        Assert.Equal(Casta.Jarl, soldado.casta);
-        Assert.Equal(arma, soldado.arma);
-        Assert.Equal(0, soldado.vidasCobradas);
-        Assert.False(soldado.productivo);
+
+        Assert.Equal(Casta.Jarl, soldado.Casta);
+        Assert.Equal(arma, soldado.Arma);
+        Assert.Equal(0, soldado.VidasCobradas);
+        Assert.False(soldado.Productivo);
     }
 
     [Fact]
@@ -27,11 +29,11 @@ public class UnitTest1
 
         Soldado soldado = new Soldado(armaDefectoValor);
 
-        soldado.SetArmas(armaNuevoValor);
+        soldado.SetArma(armaNuevoValor);
         soldado.SetVidasCobradas(vidasCobradasNuevoValor);
 
-        Assert.Equal(armaNuevoValor, soldado.arma);
-        Assert.Equal(vidasCobradasNuevoValor, soldado.vidasCobradas);
+        Assert.Equal(armaNuevoValor, soldado.Arma);
+        Assert.Equal(vidasCobradasNuevoValor, soldado.VidasCobradas);
     }
 
     [Fact]
@@ -44,7 +46,7 @@ public class UnitTest1
 
         Soldado soldado = new Soldado(armaDefectoValor);
 
-        Assert.Throws<ArgumentException>(() => soldado.SetArmas(armaNuevoValor));
+        Assert.Throws<ArgumentException>(() => soldado.SetArma(armaNuevoValor));
         Assert.Throws<ArgumentException>(() => soldado.SetVidasCobradas(vidasCobradasNuevoValor));
     }
 
@@ -55,13 +57,13 @@ public class UnitTest1
 
         Soldado soldado = new Soldado(arma);
 
-        Assert.Equal(Casta.Jarl, soldado.casta);
+        Assert.Equal(Casta.Jarl, soldado.Casta);
         soldado.SubirCasta();
 
-        Assert.Equal(Casta.Karl, soldado.casta);
+        Assert.Equal(Casta.Karl, soldado.Casta);
         soldado.SubirCasta();
 
-        Assert.Equal(Casta.Thrall, soldado.casta);
+        Assert.Equal(Casta.Thrall, soldado.Casta);
     }
 
     [Fact]

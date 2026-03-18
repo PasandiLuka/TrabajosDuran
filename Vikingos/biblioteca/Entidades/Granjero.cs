@@ -1,50 +1,108 @@
+using System.ComponentModel.DataAnnotations;
 using Biblitoteca.Entidades.Abstract;
-using Biblitoteca.Enum;
+using CastaBase = Biblitoteca.Entidades.Abstract.Casta.Casta;
+using Biblitoteca.Entidades.Castas;
 
 namespace Biblitoteca.Entidades;
 
+/// <summary>
+/// Representa un vikingo de tipo Granjero.
+/// Los granjeros son productivos cuando tienen al menos 2 hectáreas por hijo.
+/// </summary>
 public class Granjero : Vikingo
 {
-    public float hectareas { get; private set; }
-    public int cantHijos { get; private set; } 
-    public Granjero(float hectareas, int cantHijos, Casta casta = default, bool productivo = default) : base (casta, productivo)
+    /// <summary>
+    /// Obtiene o establece la cantidad de hectáreas que posee el granjero.
+    /// Debe ser un valor positivo.
+    /// </summary>
+    [Range(0.01f, float.MaxValue, ErrorMessage = "Las hectáreas deben tener un valor positivo.")]
+    public float Hectareas { get; private set; }
+
+    /// <summary>
+    /// Obtiene o establece la cantidad de hijos del granjero.
+    /// Debe ser un valor positivo.
+    /// </summary>
+    [Range(0, int.MaxValue, ErrorMessage = "La cantidad de hijos debe ser un valor positivo.")]
+    public int CantHijos { get; private set; }
+
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="Granjero"/>.
+    /// </summary>
+    /// <param name="hectareas">La cantidad de hectáreas que posee el granjero.</param>
+    /// <param name="cantHijos">La cantidad de hijos del granjero.</param>
+    /// <param name="casta">La casta inicial del granjero. Por defecto es Jarl.</param>
+    /// <param name="productivo">Indica si el granjero es productivo inicialmente.</param>
+    /// <exception cref="ArgumentException">Se lanza cuando hectáreas o cantidad de hijos son negativos.</exception>
+    public Granjero(float hectareas, int cantHijos, CastaBase? casta = null, bool productivo = false) : base(casta, productivo)
     {
-        Validador.FloatPositivo(hectareas, "El parametro'hectareas' debe ser positivo.");
-        Validador.EnteroPositivo(cantHijos, " El parametro 'cantHijos' debe ser positivo.");
-        this.hectareas = hectareas;
-        this.cantHijos = cantHijos;
-    }
-    public override void SubirCasta()
-    {
-        switch (casta)
+        if (hectareas <= 0)
         {
-            case Casta.Thrall:
-                throw new InvalidOperationException("Ha alcanzado la casta máxima aventurero :D");
-            case Casta.Karl: casta = Casta.Thrall; break;
-            case Casta.Jarl: {
-                casta = Casta.Karl;
-                hectareas += 2;
-                cantHijos += 2;
-            } break;
+            throw new ArgumentException("Las hectáreas deben tener un valor positivo.", nameof(hectareas));
+        }
+
+        if (cantHijos < 0)
+        {
+            throw new ArgumentException("La cantidad de hijos debe ser un valor positivo.", nameof(cantHijos));
+        }
+
+        Hectareas = hectareas;
+        CantHijos = cantHijos;
+    }
+
+    /// <summary>
+    /// Aplica los beneficios de subir de casta al granjero.
+    /// Incrementa 2 hectáreas y 2 hijos cuando sube de Jarl a Karl.
+    /// </summary>
+    internal void AplicarBeneficioCasta()
+    {
+        if (Casta is KarlCasta)
+        {
+            Hectareas += 2;
+            CantHijos += 2;
         }
     }
 
+    /// <summary>
+    /// Verifica la productividad del granjero.
+    /// Un granjero es productivo cuando tiene al menos 2 hectáreas por hijo.
+    /// </summary>
+    /// <exception cref="ArgumentException">Se lanza cuando el granjero no tiene suficientes hectáreas por hijo.</exception>
     public override void ChequearProductividad()
     {
-        if(hectareas >= cantHijos * 2) productivo = true;
-        else throw new ArgumentException("El granjero no es productivo, no tiene suficientes hectareas por hijo");
+        if (Hectareas < CantHijos * 2)
+        {
+            throw new ArgumentException(
+                "El granjero no es productivo: no tiene suficientes hectáreas por hijo (mínimo 2 por hijo).");
+        }
+
+        Productivo = true;
     }
 
-    //SETTERS
-    public void SetHectareas(float _hectareas)
+    /// <summary>
+    /// Establece un nuevo valor para las hectáreas.
+    /// </summary>
+    /// <param name="hectareas">La nueva cantidad de hectáreas.</param>
+    /// <exception cref="ArgumentException">Se lanza cuando el valor es negativo.</exception>
+    public void SetHectareas(float hectareas)
     {
-        Validador.FloatPositivo(_hectareas, "hectareas");
-        hectareas = _hectareas;
-    }
-    public void SetCantHijos(int _cantHijos)
-    {
-        Validador.EnteroPositivo(_cantHijos, "cantHijos");
-        cantHijos = _cantHijos;
+        if (hectareas <= 0)
+        {
+            throw new ArgumentException("Las hectáreas deben tener un valor positivo.", nameof(hectareas));
+        }
+        Hectareas = hectareas;
     }
 
+    /// <summary>
+    /// Establece un nuevo valor para la cantidad de hijos.
+    /// </summary>
+    /// <param name="cantHijos">La nueva cantidad de hijos.</param>
+    /// <exception cref="ArgumentException">Se lanza cuando el valor es negativo.</exception>
+    public void SetCantHijos(int cantHijos)
+    {
+        if (cantHijos < 0)
+        {
+            throw new ArgumentException("La cantidad de hijos debe ser un valor positivo.", nameof(cantHijos));
+        }
+        CantHijos = cantHijos;
+    }
 }
