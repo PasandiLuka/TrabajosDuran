@@ -1,8 +1,51 @@
-# TrabajosDuran
+# TrabajosDuran 📚
 
-Este repositorio contiene proyectos desarrollados como parte de trabajos académicos y profesionales.
+> **Contiene diferentes proyectos para refrescar la memoria**
+
+Este repositorio alberga una colección de proyectos desarrollados como parte de trabajos académicos y profesionales. Cada proyecto está diseñado para practicar y mantener frescos los conocimientos en desarrollo de software, patrones de diseño, arquitectura limpia y pruebas unitarias.
 
 ## Proyectos
+
+### 🐦 AngryBirds
+
+El **Proyecto AngryBirds** es una implementación del dominio del juego clásico de pájaros vs cerditos. El sistema modela diferentes tipos de pájaros con comportamientos únicos, calcula sus fuerzas basándose en diversos factores (ira, velocidad, huevos), y gestiona el ataque a la isla Cerdito para recuperar los huevos robados.
+
+#### Estructura del Proyecto AngryBirds
+
+La solución sigue una arquitectura limpia dividida en dos proyectos:
+
+* **`AngryBirds.Core/`**: Biblioteca de dominio que contiene toda la lógica de negocio:
+  * **Entidades/Pajaros**: Tipos de pájaros (Red, Chuck, Bomb, Terence, Matilda, PajaroComun)
+  * **Entidades/Islas**: Gestión de islas (IslaPajaro, IslaCerdito)
+  * **Entidades/Obstaculos**: Obstáculos (ParedVidrio, ParedMadera, ParedPiedra, CerditoObrero, CerditoArmado)
+  * **Entidades/Eventos**: Eventos (SesionManejoIra, InvasionCerditos, FiestaSorpresa)
+  * **Entidades/Abstract**: Clase abstracta base Pajaro
+  * **Interfaces**: Contratos del dominio (IPajaro, IIsla, IObstaculo, IEvento)
+  * **Enum**: Enumeraciones del sistema
+
+* **`AngryBirds.Test/`**: Proyecto de pruebas unitarias con xUnit para verificar el correcto funcionamiento de todas las entidades.
+
+#### Documentación Técnica
+
+- [Documentación AngryBirds](./AngryBirds/README.md)
+- [AngryBirds.Core](./AngryBirds/AngryBirds.Core/README.md)
+- [AngryBirds.Test](./AngryBirds/AngryBirds.Test/README.md)
+
+#### Tecnologías Utilizadas
+
+* **Lenguaje:** C#
+* **Framework:** .NET 9.0
+* **Testing:** xUnit
+
+#### Instalación y Ejecución
+
+```bash
+cd AngryBirds
+dotnet build
+dotnet test
+```
+
+---
 
 ### 🛡️ Vikingos
 
@@ -26,6 +69,7 @@ La solución está dividida en dos partes principales para mantener una arquitec
 #### Documentación Técnica
 
 - [Documentación Vikingos](./Vikingos/detalles.md)
+- [Biblioteca Vikingos](./Vikingos/biblioteca/Entidades/README.md)
 
 #### Tecnologías Utilizadas
 
@@ -35,20 +79,8 @@ La solución está dividida en dos partes principales para mantener una arquitec
 
 #### Instalación y Ejecución
 
-Sigue estos pasos para probar el proyecto en tu entorno local:
-
-1. **Clonar el repositorio:**
 ```bash
-git clone https://github.com/PasandiLuka/TrabajosDuran.git
 cd Vikingos
-```
-
-2. **Compilar la solución:**
-```bash
 dotnet build
-```
-
-3. **Ejecutar los test unitarios:**
-```bash
 dotnet test
 ```
