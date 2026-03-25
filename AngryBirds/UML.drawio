@@ -1,0 +1,226 @@
+<mxfile host="65bd71144e">
+    <diagram id="angrybirds-uml" name="UML AngryBirds">
+        <mxGraphModel dx="2102" dy="1298" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="IPajaro" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IPajaro&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="100" y="50" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="IPajaroAttributes" value="+ int Ira&lt;div&gt;+ int Fuerza&lt;/div&gt;&lt;div&gt;+ bool EsFuerte&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IPajaro" vertex="1">
+                <mxGeometry y="55" width="200" height="75" as="geometry"/>
+            </mxCell><mxCell id="IPajaroSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IPajaro" vertex="1">
+                <mxGeometry y="130" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="IPajaroMethods" value="+ void Enfadarse()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IPajaro" vertex="1">
+                <mxGeometry y="138" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="IIsla" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IIsla&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="400" y="50" width="200" height="90" as="geometry"/>
+        </mxCell><mxCell id="IIslaAttributes" value="+ string Nombre" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IIsla" vertex="1">
+                <mxGeometry y="55" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="IEvento" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IEvento&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="700" y="50" width="200" height="90" as="geometry"/>
+        </mxCell><mxCell id="IEventoMethods" value="+ void Aplicar(IslaPajaro isla)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IEvento" vertex="1">
+                <mxGeometry y="55" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="IObstaculo" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IObstaculo&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1000" y="50" width="200" height="120" as="geometry"/>
+        </mxCell><mxCell id="IObstaculoAttributes" value="+ int Resistencia&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IObstaculo" vertex="1">
+                <mxGeometry y="55" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="IObstaculoSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IObstaculo" vertex="1">
+                <mxGeometry y="115" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="IObstaculoMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IObstaculo" vertex="1">
+                <mxGeometry y="123" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="Pajaro" value="&amp;lt;&amp;lt;abstract class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Pajaro&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="100" y="250" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="PajaroAttributes" value="+ int Ira&lt;div&gt;+ abstract int Fuerza&lt;/div&gt;&lt;div&gt;+ bool EsFuerte&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Pajaro" vertex="1">
+                <mxGeometry y="55" width="200" height="75" as="geometry"/>
+            </mxCell><mxCell id="PajaroSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Pajaro" vertex="1">
+                <mxGeometry y="130" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="PajaroMethods" value="+ protected Pajaro(int ira)&lt;div&gt;+ abstract void Enfadarse()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Pajaro" vertex="1">
+                <mxGeometry y="138" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="PajaroComun" value="&lt;b&gt;PajaroComun&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="-200" y="500" width="200" height="120" as="geometry"/>
+        </mxCell><mxCell id="PajaroComunAttributes" value="+ override int Fuerza" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="PajaroComun" vertex="1">
+                <mxGeometry y="55" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="PajaroComunSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="PajaroComun" vertex="1">
+                <mxGeometry y="100" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="PajaroComunMethods" value="+ override void Enfadarse()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="PajaroComun" vertex="1">
+                <mxGeometry y="108" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="Red" value="&lt;b&gt;Red&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="20" y="500" width="200" height="120" as="geometry"/>
+        </mxCell><mxCell id="RedAttributes" value="+ int VecesEnojado&lt;div&gt;+ override int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Red" vertex="1">
+                <mxGeometry y="55" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="RedSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Red" vertex="1">
+                <mxGeometry y="115" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="RedMethods" value="+ override void Enfadarse()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Red" vertex="1">
+                <mxGeometry y="123" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="Bomb" value="&lt;b&gt;Bomb&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="240" y="500" width="200" height="120" as="geometry"/>
+        </mxCell><mxCell id="BombAttributes" value="+ static int TopeMaximoActual&lt;div&gt;+ override int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Bomb" vertex="1">
+                <mxGeometry y="55" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="BombSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Bomb" vertex="1">
+                <mxGeometry y="115" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="BombMethods" value="+ override void Enfadarse()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Bomb" vertex="1">
+                <mxGeometry y="123" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="Chuck" value="&lt;b&gt;Chuck&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="460" y="500" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="ChuckAttributes" value="+ int Velocidad&lt;div&gt;+ override int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Chuck" vertex="1">
+                <mxGeometry y="55" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="ChuckSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Chuck" vertex="1">
+                <mxGeometry y="115" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="ChuckMethods" value="+ private int CalcularFuerza()&lt;div&gt;+ override void Enfadarse()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Chuck" vertex="1">
+                <mxGeometry y="123" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="Matilda" value="&lt;b&gt;Matilda&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="680" y="500" width="220" height="150" as="geometry"/>
+        </mxCell><mxCell id="MatildaAttributes" value="+ List&amp;lt;Huevo&amp;gt; Huevos&lt;div&gt;+ override int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Matilda" vertex="1">
+                <mxGeometry y="55" width="220" height="60" as="geometry"/>
+            </mxCell><mxCell id="MatildaSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Matilda" vertex="1">
+                <mxGeometry y="115" width="220" height="8" as="geometry"/>
+            </mxCell><mxCell id="MatildaMethods" value="+ override void Enfadarse()&lt;div&gt;+ void AgregarHuevo(Huevo huevo)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Matilda" vertex="1">
+                <mxGeometry y="123" width="220" height="60" as="geometry"/>
+            </mxCell><mxCell id="Terence" value="&lt;b&gt;Terence&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="920" y="500" width="250" height="150" as="geometry"/>
+        </mxCell><mxCell id="TerenceAttributes" value="+ int VecesEnojado&lt;div&gt;+ int Multiplicador&lt;/div&gt;&lt;div&gt;+ override int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Terence" vertex="1">
+                <mxGeometry y="55" width="250" height="75" as="geometry"/>
+            </mxCell><mxCell id="TerenceSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Terence" vertex="1">
+                <mxGeometry y="130" width="250" height="8" as="geometry"/>
+            </mxCell><mxCell id="TerenceMethods" value="+ override void Enfadarse()&lt;div&gt;+ void SetMultiplicador(int multiplicador)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Terence" vertex="1">
+                <mxGeometry y="138" width="250" height="60" as="geometry"/>
+            </mxCell><mxCell id="Huevo" value="&lt;b&gt;Huevo&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="680" y="700" width="200" height="120" as="geometry"/>
+        </mxCell><mxCell id="HuevoAttributes" value="+ int Peso&lt;div&gt;+ int Fuerza&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="Huevo" vertex="1">
+                <mxGeometry y="55" width="200" height="60" as="geometry"/>
+            </mxCell><mxCell id="IslaPajaro" value="&lt;b&gt;IslaPajaro&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="400" y="250" width="300" height="200" as="geometry"/>
+        </mxCell><mxCell id="IslaPajaroAttributes" value="+ string Nombre&lt;div&gt;+ List&amp;lt;IPajaro&amp;gt; Pajaros&lt;/div&gt;&lt;div&gt;+ IEnumerable&amp;lt;IPajaro&amp;gt; PajarosFuertes&lt;/div&gt;&lt;div&gt;+ int FuerzaTotal&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IslaPajaro" vertex="1">
+                <mxGeometry y="55" width="300" height="90" as="geometry"/>
+            </mxCell><mxCell id="IslaPajaroSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IslaPajaro" vertex="1">
+                <mxGeometry y="145" width="300" height="8" as="geometry"/>
+            </mxCell><mxCell id="IslaPajaroMethods" value="+ void AgregarPajaro(IPajaro pajaro)&lt;div&gt;+ void AplicarEvento(IEvento evento)&lt;/div&gt;&lt;div&gt;+ void Atacar(IslaCerdito isla)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IslaPajaro" vertex="1">
+                <mxGeometry y="153" width="300" height="75" as="geometry"/>
+            </mxCell><mxCell id="IslaCerdito" value="&lt;b&gt;IslaCerdito&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="650" y="250" width="300" height="170" as="geometry"/>
+        </mxCell><mxCell id="IslaCerditoAttributes" value="+ string Nombre&lt;div&gt;+ List&amp;lt;IObstaculo&amp;gt; Obstaculos&lt;/div&gt;&lt;div&gt;+ bool HuevosRecuperados&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IslaCerdito" vertex="1">
+                <mxGeometry y="55" width="300" height="75" as="geometry"/>
+            </mxCell><mxCell id="IslaCerditoSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IslaCerdito" vertex="1">
+                <mxGeometry y="130" width="300" height="8" as="geometry"/>
+            </mxCell><mxCell id="IslaCerditoMethods" value="+ void AgregarObstaculo(IObstaculo obstaculo)&lt;div&gt;+ void RecibirAtaque(IPajaro pajaro)&lt;/div&gt;&lt;div&gt;+ void LimpiarObstaculosDestruidos()&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="IslaCerdito" vertex="1">
+                <mxGeometry y="138" width="300" height="75" as="geometry"/>
+            </mxCell><mxCell id="FiestaSorpresa" value="&lt;b&gt;FiestaSorpresa&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="-250" y="150" width="250" height="120" as="geometry"/>
+        </mxCell><mxCell id="FiestaSorpresaAttributes" value="+ List&amp;lt;IPajaro&amp;gt; Homenajeados" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="FiestaSorpresa" vertex="1">
+                <mxGeometry y="55" width="250" height="45" as="geometry"/>
+            </mxCell><mxCell id="FiestaSorpresaSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="FiestaSorpresa" vertex="1">
+                <mxGeometry y="100" width="250" height="8" as="geometry"/>
+            </mxCell><mxCell id="FiestaSorpresaMethods" value="+ void Aplicar(IslaPajaro isla)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="FiestaSorpresa" vertex="1">
+                <mxGeometry y="108" width="250" height="45" as="geometry"/>
+            </mxCell><mxCell id="InvasionCerditos" value="&lt;b&gt;InvasionCerditos&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="-250" y="280" width="250" height="120" as="geometry"/>
+        </mxCell><mxCell id="InvasionCerditosAttributes" value="+ int CantidadCerditos" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="InvasionCerditos" vertex="1">
+                <mxGeometry y="55" width="250" height="45" as="geometry"/>
+            </mxCell><mxCell id="InvasionCerditosSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="InvasionCerditos" vertex="1">
+                <mxGeometry y="100" width="250" height="8" as="geometry"/>
+            </mxCell><mxCell id="InvasionCerditosMethods" value="+ void Aplicar(IslaPajaro isla)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="InvasionCerditos" vertex="1">
+                <mxGeometry y="108" width="250" height="45" as="geometry"/>
+            </mxCell><mxCell id="SerieEventosDesafortunados" value="&lt;b&gt;SerieEventosDesafortunados&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="-300" y="420" width="280" height="120" as="geometry"/>
+        </mxCell><mxCell id="SerieEventosDesafortunadosAttributes" value="+ List&amp;lt;IEvento&amp;gt; Eventos" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="SerieEventosDesafortunados" vertex="1">
+                <mxGeometry y="55" width="280" height="45" as="geometry"/>
+            </mxCell><mxCell id="SerieEventosDesafortunadosSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="SerieEventosDesafortunados" vertex="1">
+                <mxGeometry y="100" width="280" height="8" as="geometry"/>
+            </mxCell><mxCell id="SerieEventosDesafortunadosMethods" value="+ void Aplicar(IslaPajaro isla)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="SerieEventosDesafortunados" vertex="1">
+                <mxGeometry y="108" width="280" height="45" as="geometry"/>
+            </mxCell><mxCell id="SesionManejoIra" value="&lt;b&gt;SesionManejoIra&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="-250" y="50" width="250" height="90" as="geometry"/>
+        </mxCell><mxCell id="SesionManejoIraMethods" value="+ void Aplicar(IslaPajaro isla)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="SesionManejoIra" vertex="1">
+                <mxGeometry y="55" width="250" height="45" as="geometry"/>
+            </mxCell><mxCell id="CerditoArmado" value="&lt;b&gt;CerditoArmado&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1000" y="250" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="CerditoArmadoAttributes" value="+ int ResistenciaCasco&lt;div&gt;+ int Resistencia&lt;/div&gt;&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;&lt;div&gt;+ int ResistenciaActual&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="CerditoArmado" vertex="1">
+                <mxGeometry y="55" width="200" height="90" as="geometry"/>
+            </mxCell><mxCell id="CerditoArmadoSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="CerditoArmado" vertex="1">
+                <mxGeometry y="145" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="CerditoArmadoMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="CerditoArmado" vertex="1">
+                <mxGeometry y="153" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="CerditoObrero" value="&lt;b&gt;CerditoObrero&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1220" y="250" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="CerditoObreroAttributes" value="+ int Resistencia&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;&lt;div&gt;+ int ResistenciaActual&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="CerditoObrero" vertex="1">
+                <mxGeometry y="55" width="200" height="75" as="geometry"/>
+            </mxCell><mxCell id="CerditoObreroSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="CerditoObrero" vertex="1">
+                <mxGeometry y="130" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="CerditoObreroMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="CerditoObrero" vertex="1">
+                <mxGeometry y="138" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="ParedMadera" value="&lt;b&gt;ParedMadera&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1000" y="450" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="ParedMaderaAttributes" value="+ int Ancho&lt;div&gt;+ int Resistencia&lt;/div&gt;&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;&lt;div&gt;+ int ResistenciaActual&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedMadera" vertex="1">
+                <mxGeometry y="55" width="200" height="90" as="geometry"/>
+            </mxCell><mxCell id="ParedMaderaSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="ParedMadera" vertex="1">
+                <mxGeometry y="145" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="ParedMaderaMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedMadera" vertex="1">
+                <mxGeometry y="153" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="ParedPiedra" value="&lt;b&gt;ParedPiedra&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1220" y="450" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="ParedPiedraAttributes" value="+ int Ancho&lt;div&gt;+ int Resistencia&lt;/div&gt;&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;&lt;div&gt;+ int ResistenciaActual&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedPiedra" vertex="1">
+                <mxGeometry y="55" width="200" height="90" as="geometry"/>
+            </mxCell><mxCell id="ParedPiedraSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="ParedPiedra" vertex="1">
+                <mxGeometry y="145" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="ParedPiedraMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedPiedra" vertex="1">
+                <mxGeometry y="153" width="200" height="45" as="geometry"/>
+            </mxCell><mxCell id="ParedVidrio" value="&lt;b&gt;ParedVidrio&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="1440" y="450" width="200" height="150" as="geometry"/>
+        </mxCell><mxCell id="ParedVidrioAttributes" value="+ int Ancho&lt;div&gt;+ int Resistencia&lt;/div&gt;&lt;div&gt;+ bool EstaEnPie&lt;/div&gt;&lt;div&gt;+ int ResistenciaActual&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedVidrio" vertex="1">
+                <mxGeometry y="55" width="200" height="90" as="geometry"/>
+            </mxCell><mxCell id="ParedVidrioSeparator" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="ParedVidrio" vertex="1">
+                <mxGeometry y="145" width="200" height="8" as="geometry"/>
+            </mxCell><mxCell id="ParedVidrioMethods" value="+ void RecibirAtaque(int fuerza)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="ParedVidrio" vertex="1">
+                <mxGeometry y="153" width="200" height="45" as="geometry"/>
+            </mxCell>
+                <mxCell id="RelPajaroIPajaro" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Pajaro" target="IPajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelMatildaHuevo" value="0..*" style="endArrow=diamondThin;endSize=14;endFill=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Matilda" target="Huevo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelPajaroComunPajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="PajaroComun" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelRedPajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Red" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelBombPajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Bomb" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelChuckPajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Chuck" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelMatildaPajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Matilda" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelTerencePajaro" value="" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Terence" target="Pajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelIslaPajaroIIsla" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="IslaPajaro" target="IIsla" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelIslaCerditoIIsla" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="IslaCerdito" target="IIsla" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelFiestaSorpresaIEvento" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;" parent="1" source="FiestaSorpresa" target="IEvento" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelInvasionCerditosIEvento" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;" parent="1" source="InvasionCerditos" target="IEvento" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelSerieEventosDesafortunadosIEvento" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;" parent="1" source="SerieEventosDesafortunados" target="IEvento" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelSesionManejoIraIEvento" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;" parent="1" source="SesionManejoIra" target="IEvento" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelCerditoArmadoIObstaculo" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="CerditoArmado" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelCerditoObreroIObstaculo" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="CerditoObrero" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelParedMaderaIObstaculo" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ParedMadera" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelParedPiedraIObstaculo" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ParedPiedra" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelParedVidrioIObstaculo" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ParedVidrio" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelIslaPajaroPajaro" value="0..*" style="endArrow=diamondThin;endSize=14;endFill=1;html=1;" parent="1" source="IslaPajaro" target="IPajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelIslaCerditoObstaculo" value="0..*" style="endArrow=diamondThin;endSize=14;endFill=1;html=1;" parent="1" source="IslaCerdito" target="IObstaculo" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelFiestaSorpresaPajaro" value="0..*" style="endArrow=diamondThin;endSize=14;endFill=1;html=1;" parent="1" source="FiestaSorpresa" target="IPajaro" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell><mxCell id="RelSerieEventosIEvento" value="0..*" style="endArrow=diamondThin;endSize=14;endFill=1;html=1;" parent="1" source="SerieEventosDesafortunados" target="IEvento" edge="1">
+            <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
