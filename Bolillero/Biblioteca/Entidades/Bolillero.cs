@@ -48,8 +48,8 @@ public class Bolillero
         {
             SacarBolilla();
         }
-        while (!BollitasAdentro.SequenceEqual(jugada) && BollitasAdentro.Count < jugada.Count);
-        if(BollitasAdentro.SequenceEqual(jugada)) return true;
+        while (!BollitasAfuera.SequenceEqual(jugada) && BollitasAfuera.Count < jugada.Count);
+        if(BollitasAfuera.SequenceEqual(jugada)) return true;
         ReIngresar();
         return false;
     }
