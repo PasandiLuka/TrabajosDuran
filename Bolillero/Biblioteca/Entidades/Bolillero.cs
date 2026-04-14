@@ -47,9 +47,9 @@ public class Bolillero
         do
         {
             SacarBolilla();
+            if(BollitasAfuera.SequenceEqual(jugada)) return true;
         }
-        while (!BollitasAfuera.SequenceEqual(jugada) && BollitasAfuera.Count < jugada.Count);
-        if(BollitasAfuera.SequenceEqual(jugada)) return true;
+        while (BollitasAfuera.Count < jugada.Count);
         ReIngresar();
         return false;
     }
