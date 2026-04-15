@@ -6,7 +6,7 @@ public class Bolillero
 {
     private readonly IAzar _azar;
     private List<int> _bollitasOriginales;
-    public List<int> BollitasAdentro;
+    public List<int> BollitasAdentro = new();
     public List<int> BollitasAfuera;
     private int _numeroMaximo;
     public int NumeroMaximo
@@ -25,7 +25,7 @@ public class Bolillero
 
         NumeroMaximo = numeroMaximo;
         _bollitasOriginales = Enumerable.Range(0, numeroMaximo).ToList();
-        BollitasAdentro = _bollitasOriginales;
+        BollitasAdentro.AddRange(_bollitasOriginales);
         BollitasAfuera = new List<int>();
     }
 
@@ -38,7 +38,8 @@ public class Bolillero
 
     public void ReIngresar()
     {
-        BollitasAdentro = _bollitasOriginales;
+        BollitasAdentro.Clear();
+        BollitasAdentro.AddRange(_bollitasOriginales);
         BollitasAfuera.Clear();
     }
 
@@ -47,9 +48,13 @@ public class Bolillero
         do
         {
             SacarBolilla();
-            if(BollitasAfuera.SequenceEqual(jugada)) return true;
         }
-        while (BollitasAfuera.Count < jugada.Count);
+        while (!BollitasAfuera.SequenceEqual(jugada) && BollitasAfuera.Count < jugada.Count);
+        if(BollitasAfuera.SequenceEqual(jugada))
+        {
+            ReIngresar();
+            return true;
+        }
         ReIngresar();
         return false;
     }
