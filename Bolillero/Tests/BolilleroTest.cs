@@ -13,7 +13,7 @@ public class BolilleroTest
     public void CuandoJuegoParaGanar_DebeDevolverTrue()
     {
         AleatorioFijo _azar = new(); 
-        Bolillero bolillero = new(5, _azar);
+        Bolillero bolillero = new Bolillero(5, _azar);
         List<int> jugada = new(){0,1,2,3,4};
 
         Assert.True(bolillero.JugarGana(jugada));
@@ -23,7 +23,7 @@ public class BolilleroTest
     public void CuandoJuegoParaPerder_DebeDevolverTrue()
     {
         AleatorioFijo _azar = new(); 
-        Bolillero bolillero = new(5, _azar);
+        Bolillero bolillero = new Bolillero(5, _azar);
         List<int> jugada = new(){0,1,2,3,4};
 
         Assert.True(bolillero.JugarGana(jugada));
@@ -37,10 +37,10 @@ public class BolilleroTest
     public void CuandoJuegoNCantidadDeVeces_DebeDevolverTrue(int cantVeces)
     {
         AleatorioFijo _azar = new(); 
-        Bolillero bolillero = new(5, _azar);
+        Bolillero bolillero = new Bolillero(10, _azar);
         List<int> jugada = new(){0,1,2,3,4};
 
-        Assert.True(bolillero.GanarNVeces(jugada, cantVeces));
+        Assert.Equal(cantVeces, bolillero.GanarNVeces(jugada, cantVeces));
     } 
 
     [Theory]
@@ -51,9 +51,24 @@ public class BolilleroTest
     public void CuandoJuegoNCantidadDeVecesYLaJugadaNoCoincide_DebeDevolverFalse(int cantVeces)
     {
         AleatorioFijo _azar = new(); 
-        Bolillero bolillero = new(5, _azar);
+        Bolillero bolillero = new Bolillero(10, _azar);
         List<int> jugada = new(){1,2,3,4,5};
 
-        Assert.False(bolillero.GanarNVeces(jugada, cantVeces));
+        Assert.NotEqual(cantVeces, bolillero.GanarNVeces(jugada, cantVeces));
+    }
+
+    [Theory]
+    [InlineData(10)]
+    [InlineData(40)]
+    [InlineData(23)]
+    [InlineData(55)]
+    [InlineData(999999)]
+    public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilos_DebeRetornarLaCantidadDeJugadasAcertadas(int cantVeces)
+    {
+        AleatorioFijo _azar = new(); 
+        Bolillero bolillero = new Bolillero(10, _azar);
+        List<int> jugada = new(){1,2,3,4,5};
+
+        Simulacion.SimularConHilos(bolillero, jugada, cantVeces, 4);
     }
 }

@@ -7,7 +7,7 @@ public class Bolillero
     private readonly IAzar _azar;
     private List<int> _bollitasOriginales;
     public List<int> BollitasAdentro = new();
-    public List<int> BollitasAfuera;
+    public List<int> BollitasAfuera = new();
     private int _numeroMaximo;
     public int NumeroMaximo
     {
@@ -16,6 +16,10 @@ public class Bolillero
         {
             if (value < 0) throw new ArgumentOutOfRangeException("El número máximo debe ser positivo.");
             _numeroMaximo = value;
+            _bollitasOriginales = Enumerable.Range(0, _numeroMaximo).ToList();
+            BollitasAdentro.Clear();
+            BollitasAdentro.AddRange(_bollitasOriginales);
+            BollitasAfuera.Clear();
         }
     }
 
@@ -63,15 +67,27 @@ public class Bolillero
 
     public bool JugarPierde(List<int> jugada) => !Jugar(jugada);
 
-    public bool GanarNVeces(List<int> jugada, int cantVeces)
+    public long GanarNVeces(List<int> jugada, int cantVeces)
     {
+        var contadorVictorias = 0;
         for(int i = 0; i < cantVeces; i++)
         {
-            if(JugarPierde(jugada))
+            if(JugarGana(jugada))
             {
-                return false;   
+                contadorVictorias++;
             }
         }
-        return true;
+        return contadorVictorias;
+    }
+
+    public Bolillero Clone()
+    {
+        return new Bolillero(_numeroMaximo, _azar)
+        {
+            BollitasAdentro = BollitasAdentro,
+            BollitasAfuera = BollitasAfuera,
+            _bollitasOriginales = _bollitasOriginales,
+
+        };
     }
 }
