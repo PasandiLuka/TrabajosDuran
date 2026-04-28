@@ -87,7 +87,6 @@ public class Bolillero
             BollitasAdentro = new List<int>(this.BollitasAdentro),
             BollitasAfuera = new List<int>(this.BollitasAfuera),
             _bollitasOriginales = new List<int>(this._bollitasOriginales),
-
         };
     }
 }
