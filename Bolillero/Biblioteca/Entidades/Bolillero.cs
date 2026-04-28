@@ -84,9 +84,9 @@ public class Bolillero
     {
         return new Bolillero(_numeroMaximo, _azar)
         {
-            BollitasAdentro = BollitasAdentro,
-            BollitasAfuera = BollitasAfuera,
-            _bollitasOriginales = _bollitasOriginales,
+            BollitasAdentro = new List<int>(this.BollitasAdentro),
+            BollitasAfuera = new List<int>(this.BollitasAfuera),
+            _bollitasOriginales = new List<int>(this._bollitasOriginales),
 
         };
     }
