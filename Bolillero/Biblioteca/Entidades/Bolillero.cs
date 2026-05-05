@@ -79,14 +79,4 @@ public class Bolillero
         }
         return contadorVictorias;
     }
-
-    public Bolillero Clone()
-    {
-        return new Bolillero(_numeroMaximo, _azar)
-        {
-            BollitasAdentro = new List<int>(this.BollitasAdentro),
-            BollitasAfuera = new List<int>(this.BollitasAfuera),
-            _bollitasOriginales = new List<int>(this._bollitasOriginales),
-        };
-    }
 }

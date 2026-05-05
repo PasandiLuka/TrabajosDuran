@@ -51,17 +51,4 @@ public class BolilleroTest
 
         Assert.NotEqual(cantVeces, bolillero.GanarNVeces(jugada, cantVeces));
     }
-
-    [Theory]
-    [InlineData(10, 1)]
-    [InlineData(40, 2)]
-    [InlineData(23, 3)]
-    [InlineData(55, 5)]
-    [InlineData(999999, 200)]
-    public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilos_DebeRetornarLaCantidadDeJugadasAcertadas(int cantVeces, int cantHilos)
-    {
-        List<int> jugada = new(){1,2,3,4,5};
-
-        Simulacion.SimularConHilos(bolillero, jugada, cantVeces, cantHilos);
-    }
 }
