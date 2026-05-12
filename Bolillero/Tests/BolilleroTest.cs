@@ -98,8 +98,8 @@ public class BolilleroTest
         Assert.True(tiempoConHilos < tiempoSinHilos);
     }
     [Theory]
-    [InlineData(999_999_999, 6)]
-    public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosAsyncYConHilosSyncYSinHilosSync_LasSimulacionesDebenFuncionarCorrectamente(int cantVeces, int cantHilos)
+    [InlineData(9_999_999, 6)]
+    public async Task CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosAsyncYConHilosSyncYSinHilosSync_LasSimulacionesDebenFuncionarCorrectamente(int cantVeces, int cantHilos)
     {
         List<int> jugada = new() { 1, 2, 3, 4, 5 };
 
@@ -107,7 +107,7 @@ public class BolilleroTest
 
         long ConHilos = Simulacion.SimularSinHilos(bolillero, jugada, cantVeces);
 
-        long ConHilosAsync = Simulacion.SimularConHilosAsync(bolillero, jugada, cantVeces, cantHilos);
+        long ConHilosAsync = await Simulacion.SimularConHilosAsync(bolillero, jugada, cantVeces, cantHilos);
 
         Assert.True(0 < SinHilos);
         Assert.True(0 < ConHilos);

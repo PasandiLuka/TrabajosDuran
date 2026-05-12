@@ -27,7 +27,7 @@ public class Simulacion
 
         return tareas.Sum(t => t.Result);
     }
-    public async static long SimularConHilosAsync(Bolillero bolillero, List<int> jugada, int cantVecesJugar, int cantHilos = 1)
+    public async static Task<long> SimularConHilosAsync(Bolillero bolillero, List<int> jugada, int cantVecesJugar, int cantHilos = 1)
     {
         var resto = cantVecesJugar % cantHilos;
         var cantVecPorProceso = (cantVecesJugar - cantVecesJugar % cantHilos) / cantHilos;
