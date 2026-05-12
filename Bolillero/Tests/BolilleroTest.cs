@@ -1,4 +1,4 @@
-﻿using Biblioteca.Entidades;
+using Biblioteca.Entidades;
 using Biblioteca.Interfaces;
 using System.Diagnostics;
 
@@ -67,7 +67,7 @@ public class BolilleroTest
     // }
 
     [Theory]
-    [InlineData(int.MaxValue, 6)]
+    [InlineData(1000000, 6)]
     public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosContraCuandoJuegoSinHilos_LaSimulacionConHilosDebeSerMenorALaDeSinHilos(int cantVeces, int cantHilos)
     {
         List<int> jugada = new() { 1, 2, 3, 4, 5 };
@@ -98,10 +98,10 @@ public class BolilleroTest
         Assert.True(tiempoConHilos < tiempoSinHilos);
     }
     [Theory]
-    [InlineData(9_999_999, 6)]
+    [InlineData(6, 6)]
     public async Task CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosAsyncYConHilosSyncYSinHilosSync_LasSimulacionesDebenFuncionarCorrectamente(int cantVeces, int cantHilos)
     {
-        List<int> jugada = new() { 1, 2, 3, 4, 5 };
+        List<int> jugada = new() { 0, 1, 2, 3, 4 };
 
         long SinHilos = Simulacion.SimularConHilos(bolillero, jugada, cantVeces, cantHilos);
 

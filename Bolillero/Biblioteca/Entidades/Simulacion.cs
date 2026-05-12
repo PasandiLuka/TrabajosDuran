@@ -14,11 +14,12 @@ public class Simulacion
 
         for(int i = 0; i < cantHilos; i++)
         {
+            int captural = i;
             tareas[i] = Task.Run(() 
                 => bolillero.Clone().GanarNVeces(
                     jugada, 
                     cantVecPorProceso + 
-                        ((resto != 0 && i < resto) ? 1 : 0)
+                        ((resto != 0 && captural < resto) ? 1 : 0)
                     )
             );
         }
@@ -36,17 +37,19 @@ public class Simulacion
 
         for(int i = 0; i < cantHilos; i++)
         {
+            int captural = i;
+
             tareas[i] = Task.Run(() 
                 => bolillero.Clone().GanarNVeces(
                     jugada, 
                     cantVecPorProceso + 
-                        ((resto != 0 && i < resto) ? 1 : 0)
+                        ((resto != 0 && captural < resto) ? 1 : 0)
                     )
             );
         }
         
-        await Task.WhenAll(tareas);
+        var resultado = await Task.WhenAll(tareas);
 
-        return tareas.Sum(t => t.Result);
+        return resultado.Sum();
     }
 }
