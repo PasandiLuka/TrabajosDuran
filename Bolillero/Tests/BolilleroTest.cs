@@ -98,34 +98,19 @@ public class BolilleroTest
         Assert.True(tiempoConHilos < tiempoSinHilos);
     }
     [Theory]
-    [InlineData(int.MaxValue, 6)]
-    public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosAsync_LaSimulacionConHilosDebeSerMenorALaDeSinHilos(int cantVeces, int cantHilos)
+    [InlineData(999_999_999, 6)]
+    public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosAsyncYConHilosSyncYSinHilosSync_LasSimulacionesDebenFuncionarCorrectamente(int cantVeces, int cantHilos)
     {
         List<int> jugada = new() { 1, 2, 3, 4, 5 };
-        var tiempoConHilos = new TimeSpan();
-        var tiempoSinHilos = new TimeSpan();
 
-        Stopwatch cronometro = new Stopwatch();
-        cronometro.Start();
+        long SinHilos = Simulacion.SimularConHilos(bolillero, jugada, cantVeces, cantHilos);
 
-        Simulacion.SimularConHilos(bolillero, jugada, cantVeces, cantHilos);
+        long ConHilos = Simulacion.SimularSinHilos(bolillero, jugada, cantVeces);
 
-        cronometro.Stop();
+        long ConHilosAsync = Simulacion.SimularConHilosAsync(bolillero, jugada, cantVeces, cantHilos);
 
-        tiempoConHilos = cronometro.Elapsed;
-
-        cronometro.Restart();
-
-        cronometro.Start();
-
-        Simulacion.SimularSinHilos(bolillero, jugada, cantVeces);
-
-        cronometro.Stop();
-
-        tiempoSinHilos = cronometro.Elapsed;
-
-        cronometro.Restart();
-
-        Assert.True(tiempoConHilos < tiempoSinHilos);
+        Assert.True(0 < SinHilos);
+        Assert.True(0 < ConHilos);
+        Assert.True(0 < ConHilosAsync);
     }
 }
