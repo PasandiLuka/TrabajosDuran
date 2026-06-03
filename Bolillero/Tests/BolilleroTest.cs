@@ -67,7 +67,7 @@ public class BolilleroTest
     // }
 
     [Theory]
-    [InlineData(1000000, 6)]
+    [InlineData(10000000, 6)]
     public void CuandoJuegoNCantidadDeVecesEnNCantidadDeHilosContraCuandoJuegoSinHilos_LaSimulacionConHilosDebeSerMenorALaDeSinHilos(int cantVeces, int cantHilos)
     {
         List<int> jugada = new() { 1, 2, 3, 4, 5 };
@@ -112,5 +112,19 @@ public class BolilleroTest
         Assert.True(0 < SinHilos);
         Assert.True(0 < ConHilos);
         Assert.True(0 < ConHilosAsync);
+    }
+    [Theory]
+    [InlineData(100, 4)]
+    [InlineData(1000, 4)]
+    [InlineData(10000, 4)]
+    public async Task CuandoJuegoConParallelAsync_ElResultadoDebeCoincidirConLaSimulacionConHilosAsync(int cantVeces, int cantHilos)
+    {
+        List<int> jugada = new() { 0, 1, 2, 3, 4 };
+
+        long resultadoParallelAsync = await Simulacion.SimularParallelAsync(bolillero, jugada, cantVeces, cantHilos);
+        long resultadoConHilosAsync = await Simulacion.SimularConHilosAsync(bolillero, jugada, cantVeces, cantHilos);
+        Console.WriteLine($"Hola1 {resultadoParallelAsync}");
+        Console.WriteLine($"Hola2 {resultadoConHilosAsync}");
+        Assert.Equal(resultadoConHilosAsync, resultadoParallelAsync);
     }
 }

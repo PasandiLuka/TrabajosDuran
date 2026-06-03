@@ -6,25 +6,25 @@ public class Simulacion
         => bolillero.GanarNVeces(jugada, cantVecesJugar);
         
     private static Task<long>[] CrearTareasSimulacion(Bolillero bolillero, List<int> jugada, int cantVecesJugar, int cantHilos)
-{
-    var resto = cantVecesJugar % cantHilos;
-    var cantVecPorProceso = (cantVecesJugar - resto) / cantHilos;
-
-    Task<long>[] tareas = new Task<long>[cantHilos];
-
-    for (int i = 0; i < cantHilos; i++)
     {
-        int capturaI = i;
-        tareas[i] = Task.Run(() => 
-            bolillero.Clone().GanarNVeces(
-                jugada, 
-                cantVecPorProceso + ((resto != 0 && capturaI < resto) ? 1 : 0)
-            )
-        );
-    }
+        var resto = cantVecesJugar % cantHilos;
+        var cantVecPorProceso = (cantVecesJugar - resto) / cantHilos;
 
-    return tareas;
-}
+        Task<long>[] tareas = new Task<long>[cantHilos];
+
+        for (int i = 0; i < cantHilos; i++)
+        {
+            int capturaI = i;
+            tareas[i] = Task.Run(() => 
+                bolillero.Clone().GanarNVeces(
+                    jugada, 
+                    cantVecPorProceso + ((resto != 0 && capturaI < resto) ? 1 : 0)
+                )
+            );
+        }
+
+        return tareas;
+    }
     public static long SimularConHilos(Bolillero bolillero, List<int> jugada, int cantVecesJugar, int cantHilos = 1)
     {
         var tareas = CrearTareasSimulacion(bolillero, jugada, cantVecesJugar, cantHilos);
@@ -40,5 +40,28 @@ public class Simulacion
         var resultado = await Task.WhenAll(tareas);
 
         return resultado.Sum();
+    }
+    public static async Task<long> SimularParallelAsync(Bolillero bolillero, List<int> jugada, int cantVecesJugar, int cantHilos = 1)
+    {
+        var resto = cantVecesJugar % cantHilos;
+        var cantVecPorProceso = (cantVecesJugar - resto) / cantHilos;
+
+        Task<long>[] tareas = new Task<long>[cantHilos];
+
+        await Task.Run(() => 
+            Parallel.For(0, cantHilos, i =>
+            {
+                int capturaI = i;
+                tareas[i] = Task.Run(() => 
+                    bolillero.Clone().GanarNVeces(
+                        jugada, 
+                        cantVecPorProceso + ((resto != 0 && capturaI < resto) ? 1 : 0)
+                    )
+                );
+            }
+            )
+        );
+        
+        return tareas.Sum(t => t.Result);
     }
 }
